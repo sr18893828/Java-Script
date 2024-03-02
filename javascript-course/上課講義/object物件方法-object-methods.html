@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Object 物件方法 Object Methods</title>
+</head>
+
+<body>
+  <script>
+
+    const info = {
+      name: "Allie",
+      color: "white",
+    };
+
+    const newInfo = { ...info } //展開運算子
+    const newInfo2 = Object.assign({}, info);
+
+    newInfo2.color = "blue";
+    console.log(newInfo2);
+    console.log(info);
+
+  </script>
+</body>
+
+</html>

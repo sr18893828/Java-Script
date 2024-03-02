@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>作業-農場資訊</title>
+</head>
+
+<body>
+  <script>
+    let farm = [{
+      id: 1,
+      name: "豬",
+      en: "pig",
+      male: 11,
+      female: 5,
+      isLarge: false
+    },
+    {
+      id: 2,
+      name: "虎",
+      en: "tiger",
+      male: 3,
+      female: 10,
+      isLarge: true
+    },
+    {
+      id: 3,
+      name: "馬",
+      en: "horse",
+      male: 9,
+      female: 8,
+      isLarge: true
+    }, {
+      id: 4,
+      name: "羊",
+      en: "sheep",
+      male: 22,
+      female: 34,
+      isLarge: false
+    }, {
+      id: 5,
+      name: "兔",
+      en: "rabbit",
+      male: 37,
+      female: 4,
+      isLarge: false
+    }];
+    // //新增area字串
+    // for (let i = 0; i < farm.length; i++) {
+    //   farm[i].area = "A";
+    // }
+    // // 新增groupSize字串
+    // // for (let i = 0; i < farm.length; i++) {
+    // //   farm[i].groupSize = "大";
+    // // }
+
+
+    // 動物英文名字
+    // let farmInfo = [];
+    // //所有動物總數
+    // let total = 0;
+    // //所有公的寵物平均值
+    // let maleAverage = 0;
+
+
+
+    // for (let i = 0; i < farm.length; i++) {
+    //   if (i === 0) {
+    //     continue;
+    //   }
+    //   farm[i].groupSize = "大"; //新增groupSize
+    //   farmInfo.push(farm[i].en);
+    //   total += (farm[i].male + farm[i].female);
+    //   maleAverage += farm[i].male / (farm.length - 1);
+
+
+    //   // if (farm[i].male + farm[i].female > 50) {
+    //   //   farm[i].groupSize = "大";
+    //   // } else if (farm[i].male + farm[i].female <= 50 && farm[i].male + farm[i].female > 15) {
+    //   //   farm[i].groupSize = "中";
+    //   // } else if (farm[i].male + farm[i].female <= 15) {
+    //   //   farm[i].groupSize = "小";
+    //   // }
+    // }
+    // console.log(farmInfo);
+    // console.log("total", total);
+    // console.log("maleAverage", maleAverage);
+    // console.log(farm);
+
+    // for (let i = 0; i < farm.length; i++) {
+    //   farmInfo.push(farm[i].en);
+    //   total += (farm[i].male + farm[i].female);
+    //   maleAverage += (farm[i].male) / farm.length;
+    // }
+    // console.log(farmInfo);
+    // console.log("total", total);
+    // console.log("maleAverage", maleAverage);
+
+    // let farmNum = [];
+    // for (let i = 0; i < farm.length; i++) {
+    //   const total = farm[i].male + farm[i].female;
+    //   farmNum.push(total);
+    // }
+    // console.log("count", farmNum);
+
+    // for (let i = 0; i < farm.length; i++) {
+    //   farm[i].groupSize = "大";
+    //   if (farm[i].male + farm[i].female > 50) {
+    //     farm[i].groupSize = "大";
+    //   }
+    //   else if (farm[i].male + farm[i].female <= 50 && farm[i].male + farm[i].female > 15) {
+    //     farm[i].groupSize = "中";
+    //   }
+    //   else if (farm[i].male + farm[i].female <= 15) {
+    //     farm[i].groupSize = "小";
+    //   }
+    // }
+    // console.log(farm);
+
+    let farminfo = {};
+    let totalValue = 0;
+    let maleValue = 0;
+
+    for (let i = 0; i < farm.length; i++) {
+      if (i === 0) {
+        continue;
+      }
+      let animal = { ...farm[i] };
+      let key = animal.en;
+      let countValue = animal.male + animal.female;
+      let groupSizeValue = "";
+      //console.log(countValue);
+      if (countValue >= 50) {
+        groupSizeValue = "大";
+      }
+      else if (countValue < 50 && countValue > 15) {
+        groupSizeValue = "中";
+      }
+      else {
+        groupSizeValue = "小";
+      }
+      farminfo[key] = { count: countValue, groupSize: groupSizeValue }
+      totalValue += countValue;
+      maleValue += animal.male;
+    }
+    farminfo.total = totalValue;
+    farminfo.countValue = maleValue / (farm.length - 1);
+
+    console.log(farminfo);
+
+  </script>
+</body>
+
+</html>

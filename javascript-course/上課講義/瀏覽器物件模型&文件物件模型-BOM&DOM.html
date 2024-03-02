@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>瀏覽器物件模型 & 文件物件模型 BOM & DOM</title>
+  <style>
+    .image {
+      width: 100%;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container"></div>
+  <div id="content" data-index="0">
+    <h1 class="title">蜂蜜大蒜烤雞腿食譜</h1>
+    <img class="image" src="" alt="image" />
+    <p class="subtitle"></p>
+    <table id="table">
+      <thead>
+        <tr>
+          <th scope="col">編號</th>
+          <th scope="col">材料</th>
+          <th scope="col">量</th>
+          <th scope="col">單位</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>雞腿</td>
+          <td>4</td>
+          <td>個</td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>蜂蜜</td>
+          <td>1/4</td>
+          <td>杯</td>
+        </tr>
+        <tr>
+          <th scope="row">3</th>
+          <td>大蒜</td>
+          <td>4</td>
+          <td>瓣</td>
+        </tr>
+        <tr>
+          <th scope="row">4</th>
+          <td>橄欖油</td>
+          <td>2</td>
+          <td>湯匙</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="steps">
+      <ul class="items">
+        <li class="item">
+          <strong>預熱烤箱：</strong>
+          <span>將烤箱預熱至 200 度攝氏（約 400 度華氏）。</span>
+        </li>
+        <li class="item">
+          <strong>準備調味醬汁：</strong>
+          <span id="text">在一個小碗中，混合蜂蜜、切碎的大蒜和橄欖油。</span>
+        </li>
+        <li class="item">
+          <strong>準備雞腿：</strong>
+          <span>在烤盤上放一張烤紙，將雞腿排放在烤盤上。使用刷子，將蜂蜜大蒜醬汁均勻塗抹在雞腿的表面。</span>
+        </li>
+        <li class="item">
+          <strong>烤制雞腿：</strong>
+          <span>將雞腿放入預熱的烤箱中，烤約 40 至 45 分鐘，或直到雞腿表面呈金黃色且熟透。</span>
+        </li>
+        <li class="item">
+          <strong>上桌享用：</strong>
+          <span>從烤箱中取出雞腿，稍微冷卻後即可上桌享用。</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <script>
+    //console.log(window);
+    //alert("Hello!!"); //跳出視窗
+
+    /*
+    const input = prompt("your name?", "Allie"); //對話視窗，並回傳
+    console.log(input);
+    */
+
+    /*
+    setTimeout(() => {
+      console.log("延遲三秒的Hello");
+    }, 3000); //延遲出現，使用毫秒為單位
+    */
+
+    /*
+    let sec = 0;
+    const interval = setInterval(() => {
+      console.log(`${sec}幾秒過去了`);
+      sec++
+      if (sec > 5) {
+        clearInterval(interval);
+      }
+    }, 1000); //計時器
+    */
+
+    /*
+    console.log(location);
+    console.log(location.href);
+    //location.href = "https://www.msn.com"; 執行後跳轉網頁
+    console.log(navigator); //瀏覽器資訊
+    console.log(history); //歷史紀錄
+    // history.forward(); //下一頁
+    // history.back(); //上一頁
+    // history.go(-1); //上一頁
+    */
+
+    const tableEl = document.getElementById("table");
+    //console.log(tableEl);
+    tableEl.style.backgroundColor = "lightgoldenrodyellow";
+
+    const thEls = document.getElementsByTagName("th");
+    //console.log(thEls);
+    for (let thEl of thEls) {
+      thEl.style.color = "cornflowerblue";
+    }
+
+    const titleEls = document.getElementsByClassName("title");
+    //console.log(titleEls);
+    // titleEls[0].textContent = "<秘製>蜂蜜大蒜烤雞腿食譜";
+    titleEls[0].innerText = "<秘製>蜂蜜大蒜烤雞腿食譜"
+
+
+    const imageEl = document.querySelector(".image"); //CSS選擇器
+    //console.log(imageEl);
+    imageEl.src = "https://img-qn.51miz.com/preview/element/00/01/28/76/E-1287693-6FBB5C50.jpg!/quality/90/unsharp/true/compress/true/format/jpg/fw/300";
+
+    const pEl = document.querySelector("p");
+    pEl.innerHTML = "這是一道<em>非常簡單<em>的料理!!"
+    //console.log(pEl);
+
+    const strongEls = document.querySelectorAll("strong");
+    //console.log(strongEls);
+    for (let i = 0; i < strongEls.length; i++) {
+      strongEls[i].style.fontSize = "20px";
+    };
+
+
+    const contentEl = document.querySelector("#content");
+    contentEl.dataset.index = "1";
+
+    const textEl = document.querySelector("#text");
+    textEl.parentNode.parentNode.children[3].querySelector("strong").style.textDecoration = "underline";
+
+
+    console.log(textEl.parentNode.parentNode.firstElementChild);
+    console.log(textEl.parentNode.parentNode.firstElementChild.nextElementSibling);
+    console.log(textEl.parentNode.parentNode.lastElementChild);
+    console.log(textEl.parentNode.parentNode.lastElementChild.previousElementSibling);
+
+
+    //新增按鈕
+    const buttonEl = document.createElement("button");
+    buttonEl.style.backgroundColor = "red";
+    buttonEl.innerText = "按鈕";
+
+    const containerEl = document.querySelector(".container");
+    containerEl.appendChild(buttonEl);
+
+
+    //刪除按鈕
+    // buttonEl.remove();
+  </script>
+</body>
+
+</html>

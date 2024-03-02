@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>條件陳述式 Condition</title>
+</head>
+
+<body>
+  <script>
+    let fruit = "lemon";
+    let sweet = "true";
+
+    /*
+    if (fruit === "蘋果") {
+      console.log("是蘋果")
+    }
+    else {
+      "不是蘋果"
+    };
+    */
+
+    /*
+    if (fruit === "檸檬") {
+      console.log("是檸檬")
+    }
+    else if (fruit === "蘋果") {
+      console.log("是蘋果")
+    }
+    else {
+      console.log("未知的水果")
+    }
+    */
+
+    /*
+    if (fruit === "lemon") {
+      console.log("是檸檬")
+      if (sweet === "true") {
+        console.log("甜");
+      }
+      else {
+        console.log("不甜");
+      }
+    }
+    else if (fruit === "apple") {
+      console.log("是蘋果")
+      if (sweet === "true") {
+        console.log("甜");
+      }
+      else {
+        console.log("不甜");
+      }
+    }
+    else {
+      console.log("未知的水果")
+    }
+    */
+
+    switch (fruit) {
+      case "lemon":
+        console.log("檸檬")
+        break;
+      case "apple":
+        console.log("蘋果")
+        break;
+      default:
+        console.log("未知的水果")
+    }
+  </script>
+</body>
+
+</html>

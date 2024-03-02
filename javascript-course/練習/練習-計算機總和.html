@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>練習-計算機總和</title>
+</head>
+
+<body>
+  <script>
+    function calculator(type, ...numbers) {
+      let result = 0;
+      //錯誤處理
+      let a, b
+      if (numbers.length >= 2) {
+        a = numbers[0];
+        b = numbers[1];
+      }
+      // let a = numbers[0];
+      // let b = numbers[1];
+      switch (type) {
+        case "add":
+          console.log(a + b);
+          break;
+        case "subtract":
+          console.log(a - b);
+          break;
+        case "multiply":
+          console.log(a * b);
+          break;
+        case "divide":
+          console.log(a / b);
+          break;
+        case "mod":
+          console.log(a % b);
+          break;
+        case "power":
+          console.log(a ** b);
+          break;
+        case "sum":
+          for (let number of numbers) {
+            result += number
+          }
+          console.log(result);
+          break;
+      }
+    };
+    calculator("sum", 1, 2, 3, 4, 5);
+    calculator("multiply", 1, 2, 3, 4, 5);
+  </script>
+</body>
+
+</html>

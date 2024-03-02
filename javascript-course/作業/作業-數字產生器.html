@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>作業-數字產生器</title>
+</head>
+
+<body>
+  <script>
+    const numGenerator = (function (type) {
+      const number = Math.random() * 100
+      //return number;
+      switch (type) {
+        case "round":
+          return Math.round(number);
+          break;
+        case "floor":
+          return Math.floor(number);
+          break;
+        case "ceil":
+          return Math.ceil(number);
+          break;
+      }
+    })("round");
+
+    console.log(`numGenerator:${numGenerator}`);
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>練習-圖表資料</title>
+</head>
+
+<body>
+  <script>
+    let farm = [{
+      id: 1,
+      name: "豬",
+      en: "pig",
+      male: 11,
+      female: 5,
+      isLarge: false
+    },
+    {
+      id: 2,
+      name: "虎",
+      en: "tiger",
+      male: 3,
+      female: 10,
+      isLarge: true
+    },
+    {
+      id: 3,
+      name: "馬",
+      en: "horse",
+      male: 9,
+      female: 8,
+      isLarge: true
+    }, {
+      id: 4,
+      name: "羊",
+      en: "sheep",
+      male: 22,
+      female: 34,
+      isLarge: false
+    }, {
+      id: 5,
+      name: "兔",
+      en: "rabbit",
+      male: 37,
+      female: 4,
+      isLarge: false
+    }];
+
+    let farminfo = {};
+    let totalValue = 0;
+    let maleValue = 0;
+
+    for (let i = 0; i < farm.length; i++) {
+      if (i === 0) {
+        continue;
+      }
+      let animal = { ...farm[i] };
+      let key = animal.en;
+      let countValue = animal.male + animal.female;
+      let groupSizeValue = "";
+      if (countValue >= 50) {
+        groupSizeValue = "大";
+      }
+      else if (countValue < 50 && countValue > 15) {
+        groupSizeValue = "中";
+      }
+      else {
+        groupSizeValue = "小";
+      }
+      farminfo[key] = { count: countValue, groupSize: groupSizeValue }
+      totalValue += countValue;
+      maleValue += animal.male;
+    }
+    farminfo.total = totalValue;
+    farminfo.countValue = maleValue / (farm.length - 1);
+
+    //console.log(farminfo);
+
+    const info = Object.entries(farminfo);
+    console.log(info);
+
+    const xAxis = info.filter(([key, value]) => {
+      return typeof value !== "number";
+    }).map(([key, value]) => key);
+    console.log(xAxis);
+
+    const data = info.filter(([key, value]) => {
+      return typeof value !== "number";
+    }).map(([key, value]) => value.count);
+    console.log(data);
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>練習-精簡農場資訊</title>
+</head>
+
+<body>
+  <script>
+    let farm = [{
+      id: 1,
+      name: "豬",
+      en: "pig",
+      male: 11,
+      female: 5,
+      isLarge: false
+    },
+    {
+      id: 2,
+      name: "虎",
+      en: "tiger",
+      male: 3,
+      female: 10,
+      isLarge: true
+    },
+    {
+      id: 3,
+      name: "馬",
+      en: "horse",
+      male: 9,
+      female: 8,
+      isLarge: true
+    }, {
+      id: 4,
+      name: "羊",
+      en: "sheep",
+      male: 22,
+      female: 34,
+      isLarge: false
+    }, {
+      id: 5,
+      name: "兔",
+      en: "rabbit",
+      male: 37,
+      female: 4,
+      isLarge: false
+    }];
+    /*
+    let count = 0;
+    for (let creatAnimal of farm) {
+      console.log(creatAnimal.name);
+      count += creatAnimal.male + creatAnimal.female
+    };
+    console.log(count);
+
+    console.log(newAnimals);
+    console.log(newAnimals.splice(2, 1, { name: "牛", count: 11 }, { name: "驢", count: 7 }, { name: "雞", count: 26 }));
+    console.log(newAnimals.slice(0, 2));
+    console.log(newAnimals.slice(5));
+    */
+    function createAnimal(animal) {
+      return {
+        name: animal.name,
+        count: animal.male + animal.female
+
+      };
+    }
+    let newAnimals = [];
+
+    for (let animal of farm) {
+      let info = createAnimal(animal);
+      console.log(info);
+      newAnimals.push(info);
+    }
+
+    newAnimals.splice(2, 1, { name: "牛", count: 11 }, { name: "驢", count: 7 }, { name: "雞", count: 26 })
+    let newAnimals1 = newAnimals.slice(0, 2);
+    let newAnimals2 = newAnimals.slice(5);
+    let allAnimals = newAnimals1.concat(newAnimals2);
+
+    allAnimals.forEach(function (item, i, arr) {
+      console.log(`動物${item.name},數量${item.count}`)
+    });
+  </script>
+</body>
+
+</html>

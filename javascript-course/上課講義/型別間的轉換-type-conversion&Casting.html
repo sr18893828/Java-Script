@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>型別間的轉換 Type Conversion & Casting</title>
+</head>
+
+<body>
+  <script>
+    /*
+    const greeting = ["Hello", " world", "!"];
+    const float = 0.846;
+    const integer = 4;
+    console.log(greeting.toString());
+    console.log(integer.toString());
+    console.log(String(integer));
+    console.log(String(greeting));
+
+    console.log(integer.toFixed(2)); //追加小數點後兩位
+    console.log(float.toFixed()); //四捨五入
+    console.log(float.toFixed(2)); //小數點後兩位
+
+    const a = "1";
+    const b = 1;
+    console.log(a + b); //如果數字與字串相連，則兩個合併，不執行運算子
+
+    const c = "8";
+    console.log(a * c); //如果兩個都是字串，而會執行運算子
+    console.log(b - c); //
+    */
+
+    /*
+    //TypeScipt
+    const check = Number("0apple");
+    console.log(typeof check === "number");
+    console.log(typeof check === "number" && !isNaN(check)); //NaN也會被視為數字，所以要檢查兩個
+    */
+
+
+    //字串陣列互轉
+    //分割字串
+    /*
+    const string = "Hi,,Hello,world,Taiwan,!";
+    console.log(string.split(","));
+
+    //連接字串
+    const array = ["Hello", "world!"];
+    console.log(array.join(" "));
+    */
+
+    /*
+    const info = {
+      owner: { name: "Allie" },
+      color: "white",
+    };
+    console.log(JSON.stringify(info));
+
+    const josnStringInfo = '{"name":"Allit","color":"white"}';
+    console.log(JSON.parse(josnStringInfo));
+
+    // 淺拷貝
+    const shallow1 = { ...info };
+    shallow1.owner.name = "Amy";
+    console.log(info);
+    console.log(shallow1);
+    const shallow2 = Object.assign({}, info);
+
+    //深拷貝
+    const newInfo = JSON.parse(JSON.stringify(info));
+    newInfo.owner.name = "Tom";
+    console.log(info);
+    console.log(newInfo);
+    */
+
+
+    const info = {
+      owner: { name: "Allie" },
+      color: "white",
+    };
+
+    const score = {
+      Allie: 80,
+      Tom: 100,
+    };
+
+    console.log(Object.keys(score));
+    console.log(Object.values(score));
+    console.log(Object.entries(score));
+
+    //解構 賦值
+    const scoreKeys = Object.entries(score).map(([key, value]) => {
+      return key;
+    });
+
+    const scoreKeys2 = Object.entries(score).map((item) => {
+      return item.key;
+    });
+    console.log(scoreKeys);
+    console.log(scoreKeys2);
+
+    console.log(Object.fromEntries(Object.entries(score)));
+
+  </script>
+</body>
+
+</html>

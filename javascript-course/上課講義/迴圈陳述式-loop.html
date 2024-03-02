@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>迴圈陳述式 Loop</title>
+</head>
+
+<body>
+  <script>
+    for (let i = 0; i <= 5; i++) {
+      console.log(i);
+    };
+
+    let i = 0;
+    while (i <= 5) {
+      console.log(i);
+      i++;
+    };
+
+    let j = 0;
+    do {
+      console.log(j);
+      j++
+    } while (j < 1);
+
+    for (let i = 0; i <= 5; i++) {
+      if (i === 4) {
+        break;
+      }
+      if (i === 2) {
+        continue;
+      }
+      console.log(i);
+    };
+
+    //迭代 iteration
+    //遍歷 loop through
+    let fruits = ["apple", "banana", "orange", "lemon"];
+    for (let fruit of fruits) {
+      console.log(fruit);
+    }
+
+  </script>
+</body>
+
+</html>

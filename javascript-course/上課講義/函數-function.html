@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>函數 Function</title>
+</head>
+
+<body>
+  <script>
+    /*
+    //參數和引數 
+    function print(name = "Allite", greeting = "Hello") {
+      console.log(`${greeting}, ${name}`);
+    }
+    print("Tom", "Hi");
+    print();
+
+    function textprint({ name = "Allie", greeting }) {
+      console.log(name);
+      console.log(greeting);
+    }
+    textprint({ greeting: "Hi" })
+    */
+
+    /*
+    function printNumber(...num) {
+      console.log(num);
+    }
+    printNumber(1, 2, 3, 4, 5, 6);
+    */
+
+    /*
+    function wakeUp(callback) {
+      console.log("起床");
+      callback();
+    }
+
+    function washFace() {
+      console.log("洗臉");
+    }
+
+    function brushTeeth() {
+      console.log("刷牙");
+    }
+
+    wakeUp(washFace);
+    wakeUp(brushTeeth);
+    */
+
+    /*
+    function brushTeeth() {
+      console.log("刷牙");
+    }
+
+    function washFace(callback) {
+      console.log("洗臉");
+      callback();
+    }
+
+    function wakeUp(callback, callback2) {
+      console.log("起床");
+      callback(callback2);
+    }
+    wakeUp(washFace, brushTeeth)
+    */
+    /*
+    function add(a, b) {
+      let num = a + b;
+      return num;
+      //return a + b; //精簡作法
+    }
+    let result = add(3, 5);
+    console.log(result);
+
+    console.log(add(3, 5));
+    */
+
+    /*
+    //函數表達式
+    let print = function () {
+      console.log("Hi");
+    }
+    print();
+    */
+
+    //箭頭函數
+    let arrowprint = (name, greeting = "Hello") => {
+      console.log(`${greeting},${name}`);
+    };
+    arrowprint("Allie", "Hi");
+    arrowprint("Allie");
+
+    function calculator(a, b) {
+      console.log(a + b);
+      console.log(a - b);
+      console.log(a * b);
+      console.log(a / b);
+      console.log(a % b);
+      console.log(a ** b);
+    };
+    calculator(3, 5);
+
+    //定義與呼叫組合
+    (function (greeting) {
+      console.log(greeting);
+    })("Hi");
+
+
+    // let add = () => {
+    //   console.log("Hello!!");
+    // };
+
+    ((greeting) => {
+      console.log(greeting)
+    })("Helllo!!!")
+
+    let add = ((a, b) => {
+      return a + b;
+    })(3, 5);
+    console.log(add);
+
+    let add1 = ((a = 1, b = 1) => {
+      return a + b;
+    })();
+    console.log(add1);
+
+  </script>
+</body>
+
+</html>

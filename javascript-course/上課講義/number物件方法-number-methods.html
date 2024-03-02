@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Number 物件方法 Number Methods</title>
+</head>
+
+<body>
+  <script>
+    /*
+    //數字轉字串
+    //console.log(new Number(0)); 
+    console.log(Number(0));
+    console.log(Number("0"));
+
+    //字串轉數字
+    console.log(Number("0apple"));
+    console.log(Number.isNaN(NaN));
+    console.log(isNaN("0apple")); //檢查回傳時是否為NaN，如果是則回傳true
+    console.log(Number.isNaN("0apple")); //先檢查是否為數字，如果不是數字則回傳false
+    console.log(Number(0.12345));
+
+    //0或空字串 是 false value
+    console.log(Number(""));
+    console.log(Boolean(""));
+    console.log(Number(false));
+    console.log(Number(true));
+
+    console.log(Number(" "));
+
+    //測試是否為整數
+    console.log(Number.isInteger(42));
+    console.log(Number.isInteger(42.2));
+
+    //字串轉數字
+    console.log(Number.parseFloat("42.2"));
+    console.log(Number.parseFloat(42.2));
+    console.log(Number.parseInt("42.2"));
+    console.log(Number.parseInt(42.2));
+    */
+
+    /*
+    console.log(Math.round(3.574)); //四捨五入
+    console.log(Math.floor(3.574)); //無條件捨去
+    console.log(Math.ceil(3.574)); //無條件進位
+    console.log(Math.random()); //隨機產生0~1的隨機數字
+    console.log(Math.random() * 100);
+    console.log(Math.max(7, 1, 5, 3)); //最大值
+    console.log(Math.min(7, 1, 5, 3)); //最小值
+    //回傳數字專有名詞
+    console.log(Math.PI); //圓周率
+    console.log(Math.E);
+    */
+
+    const now = new Date();
+    console.log(now);
+
+    const yesterday = new Date("2024-02-28");
+    const yesterday2 = new Date("2024/02/28");
+    const yesterday3 = new Date("2024.02.28");
+    console.log(yesterday);
+    console.log(yesterday2);
+    console.log(yesterday3);
+
+    console.log(now.getFullYear()); //年分
+    console.log(now.getMonth()); //顯示上個月份
+    console.log(now.getMonth() + 1); //顯示本月份
+    console.log(now.getDate()); //日期
+    console.log(now.getHours()); //小時
+    console.log(now.getMinutes()); //分鐘
+    console.log(now.getSeconds()); //秒鐘
+
+    console.log(now.toISOString());
+
+
+  </script>
+</body>
+
+</html>

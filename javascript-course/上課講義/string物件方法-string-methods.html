@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>String 物件方法 String Methods</title>
+</head>
+
+<body>
+  <script>
+    const greeting = "Hello world!";
+    console.log(greeting.toUpperCase()); //轉換大寫
+    console.log(greeting.toLowerCase()); //轉換小寫
+
+    const greetingTrim = "     Hello world   !";
+    console.log(greetingTrim);
+    console.log(greeting.trim()); //移除前後空白
+    console.log(greeting.charAt(7)); //尋找指定元素
+
+    console.log(greeting.replace("world", "Taiwan")); //取代字串
+    const greetingReplace = "Hello world world!!";
+    console.log(greetingReplace.replaceAll("world", "Taiwan"));
+
+    //尋找字元
+    console.log(greeting.slice(0, 5));
+    console.log(greeting.slice(6));
+    console.log(greeting.slice(-1));
+    console.log(greeting.slice(12, 6));
+
+    console.log(greeting.substring(6, 12));
+    console.log(greeting.substring(12, 6));
+    console.log(greeting.substring(-1));
+
+    console.log(greeting.indexOf("a")); //未尋找到回傳-1
+    console.log(greeting.indexOf("o")); //找到字元回傳index
+
+
+  </script>
+</body>
+
+</html>

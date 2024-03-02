@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>解構賦值 deconstructing assignment</title>
+</head>
+
+<body>
+  <script>
+    const fruits = ["lemon", "banana", "orange", "apple"];
+    /*
+    //方法一 
+    const [lemon, banana, orange, apple] = ["lemon", "banana", "orange", "apple"];
+    console.log(lemon);
+    console.log(banana);
+    console.log(orange);
+    console.log(apple);
+    */
+
+    /*
+    //方法二 位置需固定
+    const [lemon, banana, orange, apple] = fruits;
+    console.log(lemon);
+    console.log(banana);
+    console.log(orange);
+    console.log(apple);
+    */
+
+    const [, banana, orange, apple] = fruits;
+    console.log(banana);
+
+    const fruitsObj = {
+      lemon: "檸檬",
+      banana: "香蕉",
+      orange: "橘子",
+      apple: "蘋果",
+    };
+
+    //物件用key 賦值
+    const { lemon, banana: myBanana, orange: myOrnage, apple: myApple } = fruitsObj;
+    console.log(lemon);
+    console.log(myBanana)
+
+  </script>
+</body>
+
+</html>

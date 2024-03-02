@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>練習-園區</title>
+</head>
+
+<body>
+  <script>
+    let farm = [{
+      id: 1,
+      name: "豬",
+      en: "pig",
+      male: 11,
+      female: 5,
+      isLarge: false,
+      Area: "A"
+    },
+    {
+      id: 2,
+      name: "虎",
+      en: "tiger",
+      male: 3,
+      female: 10,
+      isLarge: true,
+    },
+    {
+      id: 3,
+      name: "馬",
+      en: "horse",
+      male: 9,
+      female: 8,
+      isLarge: true,
+    }, {
+      id: 4,
+      name: "羊",
+      en: "sheep",
+      male: 22,
+      female: 34,
+      isLarge: false,
+    }, {
+      id: 5,
+      name: "兔",
+      en: "rabbit",
+      male: 37,
+      female: 4,
+      isLarge: false,
+    }];
+
+    let pig = farm[0]
+    let tiger = farm[1]
+    let horse = farm[2]
+    let sheep = farm[3]
+    let rabbit = farm[4]
+
+    if (pig.id % 2 === 0) {
+      pig.Area = "B";
+    }
+    else {
+      pig.Area = "A";
+    }
+
+    if (tiger.id % 2 === 0) {
+      tiger.Area = "B";
+    }
+    else {
+      tiger.Area = "A";
+    }
+
+    if (horse.id % 2 === 0) {
+      horse.Area = "B";
+    }
+    else {
+      horse.Area = "A";
+    }
+
+    if (sheep.id % 2 === 0) {
+      sheep.Area = "B";
+    }
+    else {
+      sheep.Area = "A";
+    }
+
+    if (rabbit.id % 2 === 0) {
+      rabbit.Area = "B";
+    }
+    else {
+      rabbit.Area = "A";
+    }
+
+    let newFarm = [];
+    newFarm[0] = pig;
+    newFarm[1] = tiger;
+    newFarm[2] = horse;
+    newFarm[3] = sheep;
+    newFarm[4] = rabbit;
+
+    console.log(newFarm);
+
+    for (let i = 0; i < farm.length; i++) {
+      let animal = { ...farm[i] };
+      if (farm.id % 2 === 0) {
+        animal.Area = "B";
+      }
+      else {
+        animal.Area = "A";
+      }
+      newFarm[i] = animal
+    }
+    console.log(farm);
+    console.log(newFarm);
+
+  </script>
+</body>
+
+</html>

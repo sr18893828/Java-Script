@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>練習-食物名稱</title>
+</head>
+
+<body>
+  <script>
+    let food = [
+      '   chicken-nuggets ',
+      ' beef-stew   ',
+      'apple-pie   ',
+      '  fish-tacos',
+      '  cheese-burger ',
+      '  spaghetti-bolognese ',
+      '   bacon-lettuce-tomato  ',
+      '   egg-salad  ',
+      '  garlic-bread ',
+      '  honey-mustard-chicken ',
+    ];
+
+    //方法一：
+    let newFood = [];
+    food.forEach((item) => {
+      const formatName = item.trim().replaceAll("-", " ");
+      //console.log(formatName);
+      const firstLetter = formatName.charAt(0).toUpperCase();
+      const otherWords = formatName.substring(1);
+      const newName = `${firstLetter}${otherWords}`;
+      //console.log(newName);
+      newFood.push(newName);
+
+    });
+    console.log(newFood);
+
+    //方法二
+    const newFood2 = food.map((item) => {
+      const formatName2 = item.trim().replaceAll("-", " ");
+      //console.log(formatName2);
+      const firstLetter2 = formatName2.charAt(0).toUpperCase();
+      const otherWords2 = formatName2.substring(1);
+      const newName2 = `${firstLetter2}${otherWords2}`;
+      //console.log(newName2);
+      return newName2;
+    });
+    console.log(newFood2);
+
+  </script>
+</body>
+
+</html>

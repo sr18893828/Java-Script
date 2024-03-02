@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>正則表達式 Regular Expression</title>
+</head>
+
+<body>
+  <script>
+    const string = "Hello world";
+    const greeting = /Hello/;
+    console.log(greeting.test(string));
+
+    const place = new RegExp("world");
+    console.log(place.exec(string));
+    console.log(string.match(/or/));
+    console.log(string.replace(place, "Taiwan")); //取代
+
+  </script>
+</body>
+
+</html>
